@@ -5,8 +5,8 @@ from db import DB
 from cartdb import Cart
 # get token from env
 TOKEN = os.environ['TOKEN']
-db = DB('SmartphoneBot/db.json')
-cart = Cart('SmartphoneBot/cartdb.json')
+db = DB('db.json')
+cart = Cart('cartdb.json')
 
 
 def start(update: Update, context: CallbackContext):
@@ -200,4 +200,5 @@ updater.idle()
 
 bot=Bot[TOKEN]
 
-print(bot.set_webhook('https://navruzq7777.pythonanywhere.com/webhook'))
+#print(bot.set_webhook('https://navruzq7777.pythonanywhere.com/webhook'))
+print(bot.get_webhook_info)
