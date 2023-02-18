@@ -57,3 +57,7 @@ def main():
         dp.process_update(update=update)
 
         return {'status': 200}
+
+bot=Bot[TOKEN]
+
+print(bot.set_webhook('https://navruzq7777.pythonanywhere.com/webhook'))
