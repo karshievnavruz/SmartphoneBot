@@ -58,6 +58,7 @@ def main():
 
         return {'status': 200}
 
-bot=Bot[TOKEN]
+bot=Bot(TOKEN)
 
-print(bot.set_webhook('https://navruzq7777.pythonanywhere.com/webhook'))
+# print(bot.set_webhook('https://navruzq7777.pythonanywhere.com/webhook'))
+print(bot.get_webhook_info())
