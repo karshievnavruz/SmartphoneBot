@@ -5,8 +5,8 @@ from db import DB
 from cartdb import Cart
 # get token from env
 TOKEN = os.environ['TOKEN']
-db = DB('db.json')
-cart = Cart('cartdb.json')
+db = DB('SmartphoneBot/db.json')
+cart = Cart('SmartphoneBot/cartdb.json')
 
 
 def start(update: Update, context: CallbackContext):
