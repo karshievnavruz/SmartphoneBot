@@ -5,8 +5,8 @@ from db import DB
 from cartdb import Cart
 # get token from env
 TOKEN = os.environ['TOKEN']
-db = DB('SmartphoneBot/db.json')
-cart = Cart('SmartphoneBot/cartdb.json')
+db = DB('db.json')
+cart = Cart('cartdb.json')
 
 
 def start(update: Update, context: CallbackContext):
@@ -180,23 +180,24 @@ def get_cart(update: Update, context: CallbackContext):
         
 
             
-def main():
-    updater = Updater(token=TOKEN)
+updater = Updater(token=TOKEN)
 
-    updater.dispatcher.add_handler(CommandHandler('start',start))
+updater.dispatcher.add_handler(CommandHandler('start',start))
 # Add handler for photo message
-    updater.dispatcher.add_handler(MessageHandler(Filters.photo,photo))
-    updater.dispatcher.add_handler(MessageHandler(Filters.text('🛍 Shop'),shop))
-    updater.dispatcher.add_handler(MessageHandler(Filters.text('🛒 Cart'),get_cart))
-    updater.dispatcher.add_handler(MessageHandler(Filters.text('📝 About'),about))
-    updater.dispatcher.add_handler(MessageHandler(Filters.text('📞 Contact'),contact))
-    updater.dispatcher.add_handler(MessageHandler(Filters.text('Main menu'),start))
-    updater.dispatcher.add_handler(CallbackQueryHandler(phone_list,pattern='phone_list'))
-    updater.dispatcher.add_handler(CallbackQueryHandler(phone,pattern='phone'))
-    updater.dispatcher.add_handler(CallbackQueryHandler(add_cart,pattern='add_cart'))
-    updater.dispatcher.add_handler(CallbackQueryHandler(query))
+updater.dispatcher.add_handler(MessageHandler(Filters.photo,photo))
+updater.dispatcher.add_handler(MessageHandler(Filters.text('🛍 Shop'),shop))
+updater.dispatcher.add_handler(MessageHandler(Filters.text('🛒 Cart'),get_cart))
+updater.dispatcher.add_handler(MessageHandler(Filters.text('📝 About'),about))
+updater.dispatcher.add_handler(MessageHandler(Filters.text('📞 Contact'),contact))
+updater.dispatcher.add_handler(MessageHandler(Filters.text('Main menu'),start))
+updater.dispatcher.add_handler(CallbackQueryHandler(phone_list,pattern='phone_list'))
+updater.dispatcher.add_handler(CallbackQueryHandler(phone,pattern='phone'))
+updater.dispatcher.add_handler(CallbackQueryHandler(add_cart,pattern='add_cart'))
+updater.dispatcher.add_handler(CallbackQueryHandler(query))
 
-    updater.start_polling()
-    updater.idle()
+updater.start_polling()
+updater.idle()
 
-# main()
+bot=Bot[TOKEN]
+
+print(bot.get_webhool_info())
