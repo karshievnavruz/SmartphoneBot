@@ -200,5 +200,5 @@ updater.idle()
 
 bot=Bot[TOKEN]
 
-#print(bot.set_webhook('https://navruzq7777.pythonanywhere.com/webhook'))
-print(bot.get_webhook_info)
+print(bot.set_webhook('https://navruzq7777.pythonanywhere.com/webhook'))
+#print(bot.get_webhook_info())
