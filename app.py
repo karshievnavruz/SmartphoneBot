@@ -24,7 +24,7 @@ TOKEN = os.environ['TOKEN']
 bot = Bot(token=TOKEN)
 
 
-@app.route('/', methods=['POST', 'GET'])
+@app.route('/webhook', methods=['POST', 'GET'])
 def main():
     if request.method == 'GET':
         return {'status': 200}
